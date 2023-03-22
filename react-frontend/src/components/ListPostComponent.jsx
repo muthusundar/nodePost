@@ -65,7 +65,7 @@ class ListPostComponent extends Component {
                                              <td className='text-capitalize'> {post.content}</td>
                                              <td className='text-capitalize'> {(post.publish==true?'Yes':'no')}</td>
                                              <td>
-                                                 <button onClick={ () => this.editPost(post._id)} className="btn btn-info button-small">Update </button>
+                                                 <button onClick={ () => this.editPost(post._id)} className="btn btn-info button-small">Edit </button>
                                                  <button onClick={ () => this.deletePost(post._id)} className="btn btn-danger  button-small">Delete </button>
                                                  <button onClick={ () => this.viewPost(post._id)} className="btn btn-info  button-small">View </button>
                                              </td>
