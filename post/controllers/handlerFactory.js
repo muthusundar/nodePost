@@ -23,7 +23,6 @@ exports.deleteOne = Model =>
 
 exports.updateOne = Model =>
   catchAsync(async (req, res, next) => {
-    try{
     deleteImage(req.params.id,Model);  
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {   
       new: true,
@@ -38,23 +37,15 @@ exports.updateOne = Model =>
       status: 'success',
       data:  doc      
     });
-  } catch(error){
-    res.status(400).json(error);
-  }
   });
 
 exports.createOne = (Model) =>  
     catchAsync(async (req, res, next) => {
-      try{
       const doc = await Model.create(req.body);
       res.status(201).json({
         status: 'success',
         data: doc      
       });
-    }
-   catch(error){
-    res.status(400).json(error);
-  }
 } );
 
 exports.getOne = (Model) =>
